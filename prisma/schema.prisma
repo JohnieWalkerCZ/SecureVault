@@ -1,0 +1,31 @@
+datasource db {
+  provider = "mysql"
+}
+
+generator client {
+  provider = "prisma-client-api"
+}
+
+model User {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  passwordHash   String
+  
+  encryptionTest String   @db.Text 
+  
+  vaults         Vault[]
+  createdAt      DateTime @default(now())
+}
+
+model Vault {
+  id          String   @id @default(cuid())
+  title       String   
+  content     String   @db.LongText
+  iv          String   
+  
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+}
