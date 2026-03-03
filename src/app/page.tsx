@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LandingPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-slate-950 text-slate-50">
+        <div className="w-full bg-slate-950 text-slate-50">
             <main className="flex-1 flex flex-col items-center justify-center px-4 text-center">
                 <div className="inline-flex items-center rounded-full border border-slate-800 bg-slate-900/50 px-3 py-1 text-sm text-emerald-400 mb-6">
                     <ShieldCheck className="w-4 h-4 mr-2" />
@@ -21,8 +21,8 @@ export default function LandingPage() {
                     <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white">
                         <Link href="/signup"><Lock /> Create Secure Vault</Link>
                     </Button>
-                    <Button variant="outline" size="lg" className="border-slate-700 hover:bg-slate-900">
-                        <Link href=""><Github /> View Source on GitHub</Link>
+                    <Button asChild variant="outline" size="lg" className="border-slate-700 hover:bg-slate-900">
+                        <Link href="https://github.com/JohnieWalkerCZ/SecureVault" target="_blank"><Github /> View Source</Link>
                     </Button>
                 </div>
             </main>
